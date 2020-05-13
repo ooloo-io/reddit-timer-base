@@ -11,6 +11,8 @@ BRANCH_NAME_LENGTH=`git rev-parse --abbrev-ref HEAD | grep -E $regex | wc -c`
 if [ ${BRANCH_NAME_LENGTH} -eq 0 ] ; then
   echo "The name of the current branch does not match any of the tasks. Please use the title of a task in Asana in lower case. Replace whitespace with a dash (-)"
   echo
+  echo "Current branch name:" $(git rev-parse --abbrev-ref HEAD)
+  echo
   echo "Accepted branch names are:"
   echo "  create-app-skeleton"
   echo "  header"
