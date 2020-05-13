@@ -1,4 +1,10 @@
-xdescribe('Header', () => {
+console.log(Cypress.env('branch-name'));
+
+const describeAccordingToBranch = Cypress.env('branch-name') === 'action-test'
+  ? describe
+  : xdescribe;
+
+describeAccordingToBranch('Header', () => {
   beforeEach(() => {
     cy.visit('/#some-hash');
   });
