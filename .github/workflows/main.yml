@@ -37,7 +37,7 @@ jobs:
         start: yarn start
         # quote the url to be safe against YML parsing surprises
         wait-on: 'http://localhost:3000'
-        env: branch-name=$($GITHUB_HEAD_REF)
+        env: branch-name=${{ github.head_ref }}
 
     # - name: Build
     #   run: yarn build
