@@ -1,6 +1,6 @@
 console.log(Cypress.env('branch-name'));
 
-const describeAccordingToBranch = Cypress.env('branch-name') === 'action-test'
+const describeAccordingToBranch = Cypress.env('branch-name') === '$GITHUB_HEAD_REF'
   ? describe
   : xdescribe;
 
