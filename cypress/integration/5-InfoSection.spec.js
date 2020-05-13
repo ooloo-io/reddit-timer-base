@@ -1,4 +1,6 @@
-xdescribe('Info Section', () => {
+import describeOnBranches from '../utils/describeOnBranches';
+
+describeOnBranches('info-section')('Info Section', () => {
   beforeEach(() => {
     cy.visit('/');
   });

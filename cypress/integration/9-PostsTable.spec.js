@@ -1,4 +1,6 @@
-xdescribe('Posts Table', () => {
+import describeOnBranches from '../utils/describeOnBranches';
+
+describeOnBranches('posts-table')('Posts Table', () => {
   before(() => {
     cy.stubFetch();
   });

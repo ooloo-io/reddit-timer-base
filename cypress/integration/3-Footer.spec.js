@@ -1,4 +1,6 @@
-xdescribe('Footer', () => {
+import describeOnBranches from '../utils/describeOnBranches';
+
+describeOnBranches('footer')('Footer', () => {
   beforeEach(() => {
     cy.visit('/');
   });

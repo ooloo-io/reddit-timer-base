@@ -1,8 +1,6 @@
 name: CID
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -12,15 +10,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-
-    - run: echo $GITHUB_REF
-      shell: bash
-
-    - run: echo $GITHUB_HEAD_REF
-      shell: bash
-
-    - run: echo ${{ github.head_ref }}
-      shell: bash
 
     # - name: Install
     #   run: yarn install
@@ -38,6 +27,8 @@ jobs:
         # quote the url to be safe against YML parsing surprises
         wait-on: 'http://localhost:3000'
         env: branch-name=${{ github.head_ref }}
+      env:
+        TZ: Europe/Berlin
 
     # - name: Build
     #   run: yarn build

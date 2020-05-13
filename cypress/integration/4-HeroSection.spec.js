@@ -1,4 +1,6 @@
-xdescribe('Hero Section', () => {
+import describeOnBranches from '../utils/describeOnBranches';
+
+describeOnBranches('hero-section')('Hero Section', () => {
   beforeEach(() => {
     cy.visit('/');
   });

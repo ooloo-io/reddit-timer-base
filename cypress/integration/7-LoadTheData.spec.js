@@ -1,4 +1,6 @@
-xdescribe('Load the Data', () => {
+import describeOnBranches from '../utils/describeOnBranches';
+
+describeOnBranches('load-the-data')('Load the Data', () => {
   before(() => {
     cy.stubFetch();
   });

@@ -1,4 +1,6 @@
-xdescribe('Heatmap', () => {
+import describeOnBranches from '../utils/describeOnBranches';
+
+describeOnBranches('heatmap')('Heatmap', () => {
   before(() => {
     cy.stubFetch();
   });

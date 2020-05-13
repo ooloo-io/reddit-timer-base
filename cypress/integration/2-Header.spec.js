@@ -1,8 +1,6 @@
-const describeAccordingToBranch = Cypress.env('branch-name') === 'action-test'
-  ? describe
-  : xdescribe;
+import describeOnBranches from '../utils/describeOnBranches';
 
-describeAccordingToBranch('Header', () => {
+describeOnBranches('header')('Header', () => {
   beforeEach(() => {
     cy.visit('/#some-hash');
   });

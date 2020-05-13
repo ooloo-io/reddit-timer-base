@@ -1,4 +1,6 @@
-xdescribe('Subreddit Form', () => {
+import describeOnBranches from '../utils/describeOnBranches';
+
+describeOnBranches('subreddit-form')('Subreddit Form', () => {
   it('Updates URL with input value on submit', () => {
     cy.visit('/search/javascript');
 
