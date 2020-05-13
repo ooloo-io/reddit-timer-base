@@ -22,8 +22,8 @@ jobs:
     - run: echo ${{ github.head_ref }}
       shell: bash
 
-    - name: Install
-      run: yarn install
+    # - name: Install
+    #   run: yarn install
 
     # - name: Lint
     #   run: yarn lint
@@ -37,7 +37,7 @@ jobs:
         start: yarn start
         # quote the url to be safe against YML parsing surprises
         wait-on: 'http://localhost:3000'
-        env: branch-name=$GITHUB_HEAD_REF
+        env: branch-name=$($GITHUB_HEAD_REF)
 
     # - name: Build
     #   run: yarn build
