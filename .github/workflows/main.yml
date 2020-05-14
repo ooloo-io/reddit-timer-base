@@ -1,4 +1,4 @@
-name: CID
+name: CI
 
 on:
   pull_request:
@@ -12,16 +12,16 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Validate Branch Name
-      run: sh ./scripts/validate-branch-name
+      run: sh ./scripts/validate-branch-name ${{ github.head_ref }}
 
-    # - name: Install
-    #   run: yarn install
+    - name: Install
+      run: yarn install
 
-    # - name: Lint
-    #   run: yarn lint
+    - name: Lint
+      run: yarn lint
 
-    # - name: Integration Tests
-    #   run: yarn test
+    - name: Integration Tests
+      run: yarn test
 
     - name: End-to-End Tests
       uses: cypress-io/github-action@v1
@@ -33,5 +33,5 @@ jobs:
       env:
         TZ: Europe/Berlin
 
-    # - name: Build
-    #   run: yarn build
+    - name: Build
+      run: yarn build
