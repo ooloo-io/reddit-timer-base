@@ -28,9 +28,9 @@ function describeOnBranches(startBranch) {
   const currentBranchIndex = branches.indexOf(branchName);
   const isNotFeatureBranch = !!branchName.match(/chore|fix/);
 
-  // branch name is unknown
+  // branch name is unknown, don't run tests
   if (currentBranchIndex === -1 || isNotFeatureBranch) {
-    return describe;
+    return xdescribe;
   }
 
   if (startBranchIndex <= currentBranchIndex) {
