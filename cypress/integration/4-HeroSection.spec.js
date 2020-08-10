@@ -8,6 +8,8 @@ describeOnBranches('hero-section')('Hero Section', () => {
   it('Contains "Search" link', () => {
     cy.contains(/show me the best time/i)
       .click();
-    cy.url().should('equal', `${Cypress.config().baseUrl}/search/javascript`);
+    cy.url()
+      .should('include', `${Cypress.config().baseUrl}/search`)
+      .and('include', 'javascript');
   });
 });
