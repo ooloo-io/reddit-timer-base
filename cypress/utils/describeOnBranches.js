@@ -8,6 +8,7 @@ const branches = [
   'load-the-data',
   'heatmap',
   'posts-table',
+  'readme',
 ];
 
 function describeOnBranches(startBranch) {
