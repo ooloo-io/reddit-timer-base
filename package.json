@@ -17,8 +17,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "format": "eslint --fix .",
-    "cypress": "TZ=Europe/Berlin cypress run",
-    "cypress:open": "TZ=Europe/Berlin npx cypress open"
+    "cypress": "cross-env TZ=Europe/Berlin cypress run",
+    "cypress:open": "cross-env TZ=Europe/Berlin npx cypress open"
   },
   "husky": {
     "hooks": {
@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "cypress": "^6.1.0",
     "eslint": "^7.15.0",
     "eslint-config-airbnb": "^18.2.0",
